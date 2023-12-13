@@ -3,6 +3,7 @@ public class Piece {
   private char symbol;
   private String position;
   private boolean isBlack;
+  private char[] xCoords = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 
   public Piece(char symbol, String position, boolean isBlack) {
     symbol = this.symbol;
@@ -23,7 +24,22 @@ public class Piece {
     if (position.equals(this.position)) {
       return false;
     }
-
     return true;
+  }
+
+  public int[] convertPosition(String position) {
+    position = this.position;
+    char[] charPos = position.toCharArray();
+    int piecePos[2];
+
+    // compare x to chars
+    for (int i : xCoords) {
+      if (charPos[0] == xCoords[i]) {
+        piecePos[0] = i + 1;
+      }
+      return null;
+    }
+
+    // piecePos[1] =
   }
 }
